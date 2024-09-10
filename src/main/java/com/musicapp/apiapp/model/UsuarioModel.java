@@ -10,85 +10,59 @@ public class UsuarioModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
-    private Long id_usuario;
-    private String username;
-    private String contrasena;
+    private Long id;
     private String nombre;
-    private String apellido;
     private String email;
-    private LocalDateTime fecha_registro;
-    private LocalDate fecha_nacimiento;
-    private int  telefono;
+    private String tipo;
+    private int academia_id;
 
-    public Long getId_usuario() {
-        return id_usuario;
-    }
+   // Getter para id
+   public Long getId() {
+    return id;
+}
 
-    public void setId_usuario(Long id_usuario) {
-        this.id_usuario = id_usuario;
-    }
+// Setter para id
+public void setId(Long id) {
+    this.id = id;
+}
 
-    public String getUsername() {
-        return username;
-    }
+// Getter para nombre
+public String getNombre() {
+    return nombre;
+}
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+// Setter para nombre
+public void setNombre(String nombre) {
+    this.nombre = nombre;
+}
 
-    public String getContrasena() {
-        return contrasena;
-    }
+// Getter para email
+public String getEmail() {
+    return email;
+}
 
-    public void setContrasena(String contrasena) {
-        this.contrasena = contrasena;
-    }
+// Setter para email
+public void setEmail(String email) {
+    this.email = email;
+}
 
-    public String getNombre() {
-        return nombre;
-    }
+// Getter para tipo
+public String getTipo() {
+    return tipo;
+}
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+// Setter para tipo
+public void setTipo(String tipo) {
+    this.tipo = tipo;
+}
 
-    public String getEmail() {
-        return email;
-    }
+// Getter para academia_id
+public int getAcademia_id() {
+    return academia_id;
+}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public LocalDateTime getFecha_registro() {
-        return fecha_registro;
-    }
-
-    public void setFecha_registro(LocalDateTime fecha_registro) {
-        this.fecha_registro = fecha_registro;
-    }
-
-    public LocalDate getFecha_nacimiento() {
-        return fecha_nacimiento;
-    }
-
-    public void setFecha_nacimiento(LocalDate fecha_nacimiento) {
-        this.fecha_nacimiento = fecha_nacimiento;
-    }
-
-    public int getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(int telefono) {
-        this.telefono = telefono;
-    }
+// Setter para academia_id
+public void setAcademia_id(int academia_id) {
+    this.academia_id = academia_id;
+}
 }
