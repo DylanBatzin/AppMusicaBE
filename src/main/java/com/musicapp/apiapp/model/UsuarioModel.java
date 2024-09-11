@@ -1,7 +1,5 @@
 package com.musicapp.apiapp.model;
 import jakarta.persistence.*;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "usuario")
@@ -15,7 +13,15 @@ public class UsuarioModel {
     private String email;
     private String tipo;
     private int academia_id;
+    private String password;
 
+    public String getPasword(){
+        return password;
+    }
+
+    public void setPassword(String password){
+        this.password = password;
+    }
    // Getter para id
    public Long getId() {
     return id;
