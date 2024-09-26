@@ -1,12 +1,10 @@
 package com.musicapp.apiapp.services;
-
 import com.musicapp.apiapp.model.UsuarioModel;
 import com.musicapp.apiapp.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Optional;
-
 @Service
 public class UsuarioServices {
     @Autowired
@@ -24,10 +22,8 @@ public class UsuarioServices {
         if(usuarioEcnontrado.isPresent()){
             UsuarioModel usuarioActualizado = usuarioEcnontrado.get();
             usuarioActualizado.setEmail(nuevoModel.getEmail());
-            usuarioActualizado.setAcademia_id(nuevoModel.getAcademia_id());
-            usuarioActualizado.setNombre(nuevoModel.getNombre());
-            usuarioActualizado.setTipo(nuevoModel.getTipo());
-            usuarioActualizado.setPassword(nuevoModel.getPasword());
+            usuarioActualizado.setUser(nuevoModel.getUser());
+            usuarioActualizado.setPassword(nuevoModel.getPassword());
             return Optional.of(usuarioRepository.save(usuarioActualizado));
         }
         else{

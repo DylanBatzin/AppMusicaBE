@@ -1,74 +1,60 @@
 package com.musicapp.apiapp.model;
+
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "usuario")
+@Table(name = "Usuario") // Asegúrate de que el nombre coincide con el de la tabla en la BD
 public class UsuarioModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(unique = true, nullable = false)
-    private Long id;
-    private String nombre;
+    @Column(name = "id_usuario", unique = true, nullable = false)
+    private Long idUsuario;
+
+    @Column(name = "`User`", length = 20)
+    private String user;
+
+    @Column(name = "Email", length = 60)
     private String email;
-    private String tipo;
-    private int academia_id;
+
+    @Column(name = "Password", length = 30)
     private String password;
 
-    public String getPasword(){
+    // Getters y Setters
+
+    // Getter y Setter para idUsuario
+    public Long getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(Long idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    // Getter y Setter para user
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    // Getter y Setter para email
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    // Getter y Setter para password
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password){
+    public void setPassword(String password) {
         this.password = password;
     }
-   // Getter para id
-   public Long getId() {
-    return id;
-}
-
-// Setter para id
-public void setId(Long id) {
-    this.id = id;
-}
-
-// Getter para nombre
-public String getNombre() {
-    return nombre;
-}
-
-// Setter para nombre
-public void setNombre(String nombre) {
-    this.nombre = nombre;
-}
-
-// Getter para email
-public String getEmail() {
-    return email;
-}
-
-// Setter para email
-public void setEmail(String email) {
-    this.email = email;
-}
-
-// Getter para tipo
-public String getTipo() {
-    return tipo;
-}
-
-// Setter para tipo
-public void setTipo(String tipo) {
-    this.tipo = tipo;
-}
-
-// Getter para academia_id
-public int getAcademia_id() {
-    return academia_id;
-}
-
-// Setter para academia_id
-public void setAcademia_id(int academia_id) {
-    this.academia_id = academia_id;
-}
 }

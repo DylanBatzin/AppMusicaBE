@@ -7,15 +7,15 @@ public class AcademiaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
-    private Long id;
+    private Long id_academia;
     private String nombre;
 
-    public Long getId() {
-        return this.id;
+    public Long getId_academia() {
+        return this.id_academia;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId_academia(Long id_academia) {
+        this.id_academia = id_academia;
     }
 
     public String getNombre() {
