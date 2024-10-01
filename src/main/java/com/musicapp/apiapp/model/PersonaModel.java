@@ -8,7 +8,8 @@ public class PersonaModel {
     @Column(unique = true, nullable = false)
     private int id_persona;
     private int id_usuario;
-    private int id_academia;
+    @Column(name = "id_academia")  // Mapear la columna de la base de datos
+    private int idAcademia;
     private String nombre;
     private String apellido;
     private String tipo;
@@ -30,11 +31,11 @@ public class PersonaModel {
     }
 
     public int getId_academia() {
-        return this.id_academia;
+        return this.idAcademia;
     }
 
-    public void setId_academia(int id_academia) {
-        this.id_academia = id_academia;
+    public void setId_academia(int idAcademia) {
+        this.idAcademia = idAcademia;
     }
 
     public String getNombre() {

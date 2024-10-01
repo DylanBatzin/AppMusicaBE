@@ -16,4 +16,15 @@ public class PersonaServices {
      public PersonaModel GuardarPersona(PersonaModel academia){
         return personaRepository.save(academia);
     }
+    public ArrayList<PersonaModel> ObtenerAlumnosPorAcademia(int idAcademia) {
+        return personaRepository.findByIdAcademiaAndTipo(idAcademia, "Alumno");
+    }
+    public boolean eliminarUsuario(Long id) {
+        try {
+            personaRepository.deleteById(id);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }

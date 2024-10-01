@@ -18,4 +18,19 @@ public class PersonaController {
     public PersonaModel guardarpersona(@RequestBody PersonaModel persona){
         return personaServices.GuardarPersona(persona);
     }
+
+    @GetMapping("/alumnosPorAcademia")
+    public ArrayList<PersonaModel> obtenerAlumnosPorAcademia(@RequestParam("idAcademia") int idAcademia) {
+        return personaServices.ObtenerAlumnosPorAcademia(idAcademia);
+    }
+
+    @DeleteMapping(path = "/personadelete/{id}")
+    public String eliminarUsuario(@PathVariable("id") Long id) {
+        boolean ok = personaServices.eliminarUsuario(id);
+        if (ok) {
+            return "Se eliminó el usuario con id " + id;
+        } else {
+            return "No se pudo eliminar el usuario con id " + id;
+        }
+    }
 }
