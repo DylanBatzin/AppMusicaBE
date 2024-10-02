@@ -7,9 +7,19 @@ public class examenModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
     private int id_examen;
+    
     private int id_leccion;
     private String preguntas;
     private String respuestas;
+    private String titulo;
+
+    public String getTitulo() {
+        return this.titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
 
     public int getId_examen() {
         return this.id_examen;

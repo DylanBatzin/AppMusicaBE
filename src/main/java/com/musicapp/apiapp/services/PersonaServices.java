@@ -4,6 +4,7 @@ import com.musicapp.apiapp.repositories.personaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
+import java.util.Optional;
 
 @Service
 public class PersonaServices {
@@ -27,4 +28,19 @@ public class PersonaServices {
             return false;
         }
     }
+    public Optional<PersonaModel> ActualizarPersona(Long idpersona, PersonaModel personaModel){
+        Optional<PersonaModel> personaencotrada = personaRepository.findById(idpersona);
+        if(personaencotrada.isPresent()){
+            PersonaModel personaActualizada = personaencotrada.get();
+            personaActualizada.setNombre(personaModel.getNombre());
+            personaActualizada.setApellido(personaModel.getApellido());
+            return Optional.of(personaRepository.save(personaActualizada));
+        }else{
+            return Optional.empty();
+        }
+    }
+    public Optional<PersonaModel> obtenerPersonaPorId(Long id) {
+        return personaRepository.findById(id);
+    }
+    
 }

@@ -9,6 +9,15 @@ public class LeccionModel {
     private int id_leccion;
     private int id_instrumento;
     private String link;
+    private String titulo;
+
+    public String getTitulo() {
+        return this.titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
 
     public int getId_leccion() {
         return this.id_leccion;

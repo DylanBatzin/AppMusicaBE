@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.*;
 import com.musicapp.apiapp.model.PersonaModel;
 import com.musicapp.apiapp.services.PersonaServices;
 import java.util.ArrayList;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/persona")
@@ -24,7 +25,7 @@ public class PersonaController {
         return personaServices.ObtenerAlumnosPorAcademia(idAcademia);
     }
 
-    @DeleteMapping(path = "/personadelete/{id}")
+    @DeleteMapping(path = "/personadelete/v")
     public String eliminarUsuario(@PathVariable("id") Long id) {
         boolean ok = personaServices.eliminarUsuario(id);
         if (ok) {
@@ -33,4 +34,14 @@ public class PersonaController {
             return "No se pudo eliminar el usuario con id " + id;
         }
     }
+    @PutMapping("/EdiatarPersona/{id}")
+    public Optional<PersonaModel> actualizarPersona(@PathVariable("id") long idpersona, @RequestBody PersonaModel persona){
+        return personaServices.ActualizarPersona(idpersona,persona);
+    }
+    @GetMapping("/{id}")
+    public Optional<PersonaModel> obtenerPersonaPorId(@PathVariable("id") Long id) {
+    return personaServices.obtenerPersonaPorId(id);
 }
+
+}
+    

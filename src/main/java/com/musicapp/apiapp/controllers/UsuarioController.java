@@ -23,18 +23,15 @@ public class UsuarioController {
         return usuarioServices.guardarUsuario(usuario);
     }
 
-    @PutMapping(path = "/{id}")
+    @PutMapping(path = "EditarUsuario/{id}")
     public Optional<UsuarioModel> actualizarUsuario(@PathVariable("id") Long id, @RequestBody UsuarioModel usuario) {
         return usuarioServices.actualizarUsuarios(id, usuario);
     }
 
-    @DeleteMapping(path = "/{id}")
-    public String eliminarUsuario(@PathVariable("id") Long id) {
-        boolean ok = usuarioServices.eliminarUsuario(id);
-        if (ok) {
-            return "Se eliminó el usuario con id " + id;
-        } else {
-            return "No pudo eliminar el usuario con id " + id;
-        }
+    @GetMapping("/{id}")
+    public Optional<UsuarioModel> obtenerusuarioporId(@PathVariable("id") Long id){
+        return usuarioServices.obtenerusuarioporId(id);
     }
+
+    
 }

@@ -38,4 +38,8 @@ public class UsuarioServices {
             return false;
         }
     }
+
+    public Optional<UsuarioModel> obtenerusuarioporId(long id){
+        return usuarioRepository.findById(id);
+    }
 }
