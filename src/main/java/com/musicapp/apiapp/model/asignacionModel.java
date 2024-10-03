@@ -19,7 +19,16 @@ public class asignacionModel {
     @Column(name = "id_leccion")
     private Integer leccion;
     private Integer id_actividad;
-    private Integer id_alumno;
+    @Column(name = "id_alumno")
+    private Integer idAlumno;
+
+    public Integer getIdAlumno() {
+    return idAlumno;
+    }
+
+    public void setIdAlumno(Integer idAlumno) {
+    this.idAlumno = idAlumno;
+    }
 
     public Integer getLeccion() {
         return this.leccion;
@@ -37,14 +46,7 @@ public class asignacionModel {
         this.id_actividad = id_actividad;
     }
 
-    public Integer getId_alumno() {
-        return this.id_alumno;
-    }
-
-    public void setId_alumno(Integer id_alumno) {
-        this.id_alumno = id_alumno;
-    }
-
+   
     @Column(name = "id_examen")
     private Integer id_examen;
 

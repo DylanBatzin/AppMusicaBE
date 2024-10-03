@@ -4,6 +4,7 @@ import com.musicapp.apiapp.repositories.actividadesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
+import java.util.Optional;
 
 @Service
 public class ActividadesServices {
@@ -15,5 +16,8 @@ public class ActividadesServices {
     }
      public ActividadesModel GuardarActividad(ActividadesModel actividad){
         return actividadesRepository.save(actividad);
+    }
+    public Optional<ActividadesModel> obtenerACtividadporId (long id){
+        return actividadesRepository.findById(id);
     }
 }

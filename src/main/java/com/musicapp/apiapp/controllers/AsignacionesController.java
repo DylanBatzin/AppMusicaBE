@@ -18,4 +18,10 @@ public class AsignacionesController {
     public asignacionModel guardarasignacion(@RequestBody asignacionModel asignacion){
         return asignacionesServices.GuardarAsignacion(asignacion);
     }
+
+    @GetMapping("/alumno/{idAlumno}")
+    public ArrayList<asignacionModel> obtenerAsignacionPorAlumno(@PathVariable("idAlumno") Integer idAlumno) {
+        return asignacionesServices.ObtenerAsignacionPorAlumno(idAlumno);
+    }
+    
 }
