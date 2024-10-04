@@ -25,7 +25,7 @@ public class PersonaController {
         return personaServices.ObtenerAlumnosPorAcademia(idAcademia);
     }
 
-    @DeleteMapping(path = "/personadelete/v")
+    @DeleteMapping(path = "/personadelete/{id}")
     public String eliminarUsuario(@PathVariable("id") Long id) {
         boolean ok = personaServices.eliminarUsuario(id);
         if (ok) {

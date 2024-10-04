@@ -23,5 +23,15 @@ public class AsignacionesController {
     public ArrayList<asignacionModel> obtenerAsignacionPorAlumno(@PathVariable("idAlumno") Integer idAlumno) {
         return asignacionesServices.ObtenerAsignacionPorAlumno(idAlumno);
     }
+
+    @DeleteMapping(path = "/asiganciondelete/{id}")
+    public String eliminarAsignacion(@PathVariable("id") Long id) {
+        boolean ok = asignacionesServices.eliminarasignacion(id);
+        if (ok) {
+            return "Se eliminó el usuario con id " + id;
+        } else {
+            return "No se pudo eliminar el usuario con id " + id;
+        }
+    }
     
 }

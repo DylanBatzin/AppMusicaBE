@@ -22,4 +22,12 @@ public class AsignacionesServices {
         return asignacionesRepository.findByIdAlumno(id_alumno);
     }
 
+    public boolean eliminarasignacion(Long id) {
+        try {
+            asignacionesRepository.deleteById(id);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }
