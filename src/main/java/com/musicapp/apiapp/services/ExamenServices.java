@@ -4,6 +4,8 @@ import com.musicapp.apiapp.repositories.examenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
+import java.util.Optional;
+
 @Service
 public class ExamenServices {
     @Autowired
@@ -14,5 +16,8 @@ public class ExamenServices {
     }
      public examenModel GuardarExamen(examenModel examen){
         return examenRepository.save(examen);
+    }
+    public Optional<examenModel> obtenerExamenporId(Long id){
+        return examenRepository.findById(id);
     }
 }
